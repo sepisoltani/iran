@@ -1,0 +1,31 @@
+{
+    "name": "sepisoltani/iran",
+    "description": "Laravel package that helps Iranian developers to have Iran provinces , countries and cities in their project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "sepehr",
+            "email": "sph_1996@yahoo.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Sepisoltani\\Iran\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.4",
+        "predis/predis": "~1.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Sepisoltani\\Iran\\IranServiceProvider"
+            ],
+            "aliases": {
+                "Iran": "Sepisoltani\\Iran\\Facades\\Iran"
+            }
+        }
+    }
+}
