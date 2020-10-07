@@ -74,7 +74,7 @@ class IranServiceProvider extends ServiceProvider
      */
     private function publishConfigs(): void
     {
-        //php artisan vendor:publish --tag=iran-configs
+            //php artisan vendor:publish --tag=iran-configs
         $this->publishes([__DIR__ . '/Config/iran.php' => config_path('iran.php')], 'iran-configs');
 
     }
