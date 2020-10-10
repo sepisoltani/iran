@@ -19,7 +19,7 @@
         }
     },
     "scripts": {
-        "test": "vendor/bin/phpunit --testdox --verbose"
+        "test": "vendor/bin/phpunit --testdox --verbose --colors=always"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -39,6 +39,7 @@
     },
     "require-dev": {
         "phpunit/phpunit": "8.5",
-        "orchestra/testbench": "^6.2"
+        "orchestra/testbench": "^6.2",
+        "barryvdh/laravel-ide-helper": "^2.8"
     }
 }
