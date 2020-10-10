@@ -16,8 +16,6 @@ PHP >= 7.4
 Laravel >= 8.0
 
 
-
-
 ## Installation
 
 Use the package manager [composer](https://getcomposer.org/) to install this package.
