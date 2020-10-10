@@ -1,7 +1,7 @@
 <?php
 
-
 namespace Sepisoltani\Iran\Tools;
+
 use Sepisoltani\Iran\Iran;
 use Sepisoltani\Iran\Models\City;
 use Sepisoltani\Iran\Models\Country;
@@ -30,6 +30,7 @@ class ClassBuilder
             $cityRepository = new CachingCityRepository(new CityRepository(new City()), app('cache.store'));
             $countryRepository = new CachingCountryRepository(new CountryRepository(new Country()), app('cache.store'));
         }
+
         return new Iran($provinceRepository, $cityRepository, $countryRepository);
     }
 }

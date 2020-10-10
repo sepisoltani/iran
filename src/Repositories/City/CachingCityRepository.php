@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Sepisoltani\Iran\Repositories\City;
 
 use Illuminate\Contracts\Cache\Repository as Cache;
@@ -15,7 +14,6 @@ class CachingCityRepository implements CityRepositoryInterface
      * @var string
      * @var int
      */
-
     protected CityRepository $repository;
     protected Cache $cache;
     protected string $tag_name;
@@ -23,8 +21,9 @@ class CachingCityRepository implements CityRepositoryInterface
 
     /**
      * CachingCityRepository constructor.
+     *
      * @param CityRepository $repository
-     * @param Cache $cache
+     * @param Cache          $cache
      */
     public function __construct(CityRepository $repository, Cache $cache)
     {
@@ -37,7 +36,6 @@ class CachingCityRepository implements CityRepositoryInterface
     /**
      * @return Collection
      */
-
     public function all(): Collection
     {
         return $this->cache->tags($this->tag_name)->remember('all', $this->time, function () {
@@ -57,6 +55,7 @@ class CachingCityRepository implements CityRepositoryInterface
 
     /**
      * @param $id
+     *
      * @return City
      */
     public function find($id): City

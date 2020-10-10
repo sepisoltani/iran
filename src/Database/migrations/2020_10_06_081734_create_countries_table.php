@@ -22,7 +22,6 @@ class CreateCountriesTable extends Migration
             $table->decimal('lng', 11, 8);
             $table->boolean('approved')->default(true);
             $table->foreign('province_id')->references('id')->on('provinces')->onDelete('cascade');
-
         });
     }
 

@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Sepisoltani\Iran\Facades;
-
 
 use Illuminate\Support\Facades\Facade;
 

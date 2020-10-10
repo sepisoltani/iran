@@ -1,11 +1,12 @@
 <?php
 
 namespace Sepisoltani\Iran\Tests\Feature\City;
+
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Sepisoltani\Iran\Facades\Iran;
 use Sepisoltani\Iran\Models\City;
 use Sepisoltani\Iran\Tests\TestCase;
-use Sepisoltani\Iran\Facades\Iran;
 
 class CityTest extends TestCase
 {
@@ -25,17 +26,16 @@ class CityTest extends TestCase
 
     public function test_get_all_cities()
     {
-
         $citiesCollection = Iran::get_cities();
         $needle = [
-            'id' => 1,
+            'id'          => 1,
             'province_id' => 1,
-            'country_id' => 1,
-            'name' => 'آذرشهر',
-            'en_name' => 'Azarshahr',
-            'lat' => '37.75601290',
-            'lng' => '45.95409340',
-            'approved' => '0',
+            'country_id'  => 1,
+            'name'        => 'آذرشهر',
+            'en_name'     => 'Azarshahr',
+            'lat'         => '37.75601290',
+            'lng'         => '45.95409340',
+            'approved'    => '0',
         ];
         $this->assertTrue($citiesCollection instanceof Collection);
         $this->assertIsArray($citiesCollection->toArray());
@@ -44,17 +44,15 @@ class CityTest extends TestCase
 
     public function test_get_all_approved_cities()
     {
-
-
         $needle = [
-            'id' => 1,
+            'id'          => 1,
             'province_id' => 1,
-            'country_id' => 1,
-            'name' => 'آذرشهر',
-            'en_name' => 'Azarshahr',
-            'lat' => '37.75601290',
-            'lng' => '45.95409340',
-            'approved' => '1',
+            'country_id'  => 1,
+            'name'        => 'آذرشهر',
+            'en_name'     => 'Azarshahr',
+            'lat'         => '37.75601290',
+            'lng'         => '45.95409340',
+            'approved'    => '1',
         ];
 
         $approved_cities = Iran::get_approved_cities();

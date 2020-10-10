@@ -1,7 +1,6 @@
 <?php
+
 namespace Sepisoltani\Iran\Tests;
-
-
 
 use Illuminate\Foundation\Application;
 use Sepisoltani\Iran\IranServiceProvider;
@@ -16,6 +15,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
     /**
      * @param Application $app
+     *
      * @return array|string[]
      */
     protected function getPackageProviders($app)
@@ -24,6 +24,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
             IranServiceProvider::class,
         ];
     }
+
     /**
      * @param Application $app
      */

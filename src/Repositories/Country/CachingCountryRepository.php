@@ -1,12 +1,10 @@
 <?php
 
-
 namespace Sepisoltani\Iran\Repositories\Country;
 
 use Illuminate\Contracts\Cache\Repository as Cache;
 use Illuminate\Database\Eloquent\Collection;
 use Sepisoltani\Iran\Models\Country;
-
 
 class CachingCountryRepository implements CountryRepositoryInterface
 {
@@ -23,8 +21,9 @@ class CachingCountryRepository implements CountryRepositoryInterface
 
     /**
      * CachingCountryRepository constructor.
+     *
      * @param CountryRepository $repository
-     * @param Cache $cache
+     * @param Cache             $cache
      */
     public function __construct(CountryRepository $repository, Cache $cache)
     {
@@ -42,13 +41,11 @@ class CachingCountryRepository implements CountryRepositoryInterface
         return $this->cache->tags($this->tag_name)->remember('all', $this->time, function () {
             return $this->repository->all();
         });
-
     }
 
     /**
      * @return Collection
      */
-
     public function all_approved(): Collection
     {
         return $this->cache->tags($this->tag_name)->remember('all-approved', $this->time, function () {
@@ -58,9 +55,9 @@ class CachingCountryRepository implements CountryRepositoryInterface
 
     /**
      * @param $id
+     *
      * @return Country
      */
-
     public function find($id): Country
     {
         return $this->cache->tags($this->tag_name)->remember("find-$id", $this->time, function () use ($id) {
