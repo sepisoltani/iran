@@ -17,7 +17,6 @@ before_script:
 
 script:
   - composer test
-  - composer test-coverage
 
 notifications:
   email: false
