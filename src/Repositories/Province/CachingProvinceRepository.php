@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Sepisoltani\Iran\Repositories\Province;
 
 use Illuminate\Contracts\Cache\Repository as Cache;
@@ -22,8 +21,9 @@ class CachingProvinceRepository implements ProvinceRepositoryInterface
 
     /**
      * CachingProvinceRepository constructor.
+     *
      * @param ProvinceRepository $repository
-     * @param Cache $cache
+     * @param Cache              $cache
      */
     public function __construct(ProvinceRepository $repository, Cache $cache)
     {
@@ -43,16 +43,12 @@ class CachingProvinceRepository implements ProvinceRepositoryInterface
                 return $this->repository->all();
             });
         } catch (\Exception $exception) {
-
         }
-
-
     }
 
     /**
      * @return Collection
      */
-
     public function all_approved(): Collection
     {
         return $this->cache->tags($this->tag_name)->remember('all-approved', $this->time, function () {
@@ -62,9 +58,9 @@ class CachingProvinceRepository implements ProvinceRepositoryInterface
 
     /**
      * @param $id
+     *
      * @return Province
      */
-
     public function find($id): Province
     {
         return $this->cache->tags($this->tag_name)->remember("find-$id", $this->time, function () use ($id) {

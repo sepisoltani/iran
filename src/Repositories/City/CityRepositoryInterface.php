@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Sepisoltani\Iran\Repositories\City;
-
 
 use Illuminate\Database\Eloquent\Collection;
 use Sepisoltani\Iran\Models\City;

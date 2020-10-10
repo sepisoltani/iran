@@ -43,10 +43,11 @@ class init extends Command
         $this->info('Execute migrate first, migrating ...');
         $this->call('migrate');
         $this->info('Seeding Data ...');
-        $this->call('db:seed', ["--class" => ProvincesTableSeeder::class]);
-        $this->call('db:seed', ["--class" => CountriesTableSeeder::class]);
-        $this->call('db:seed', ["--class" => CitiesTableSeeder::class]);
+        $this->call('db:seed', ['--class' => ProvincesTableSeeder::class]);
+        $this->call('db:seed', ['--class' => CountriesTableSeeder::class]);
+        $this->call('db:seed', ['--class' => CitiesTableSeeder::class]);
         $this->info('Done!');
+
         return 1;
     }
 }

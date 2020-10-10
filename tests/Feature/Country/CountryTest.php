@@ -28,13 +28,13 @@ class ProvinceTest extends TestCase
     {
         $countriesCollection = Iran::get_countries();
         $needle = [
-            'id' => 1,
+            'id'          => 1,
             'province_id' => 1,
-            'name' => 'آذرشهر',
-            'en_name' => 'Azarshahr',
-            'lat' => '37.75514300',
-            'lng' => '45.86896300',
-            'approved' => '0',
+            'name'        => 'آذرشهر',
+            'en_name'     => 'Azarshahr',
+            'lat'         => '37.75514300',
+            'lng'         => '45.86896300',
+            'approved'    => '0',
         ];
         $this->assertTrue($countriesCollection instanceof Collection);
         $this->assertIsArray($countriesCollection->toArray());
@@ -44,13 +44,13 @@ class ProvinceTest extends TestCase
     public function test_get_all_approved_countries()
     {
         $needle = [
-            'id' => 1,
+            'id'          => 1,
             'province_id' => 1,
-            'name' => 'آذرشهر',
-            'en_name' => 'Azarshahr',
-            'lat' => '37.75514300',
-            'lng' => '45.86896300',
-            'approved' => '1',
+            'name'        => 'آذرشهر',
+            'en_name'     => 'Azarshahr',
+            'lat'         => '37.75514300',
+            'lng'         => '45.86896300',
+            'approved'    => '1',
         ];
         $approved_countries = Iran::get_approved_countries();
         $this->assertTrue($approved_countries instanceof Collection);

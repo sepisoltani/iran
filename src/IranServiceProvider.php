@@ -7,7 +7,6 @@ use Illuminate\Support\ServiceProvider;
 use Sepisoltani\Iran\Console\init;
 use Sepisoltani\Iran\Tools\ClassBuilder;
 
-
 class IranServiceProvider extends ServiceProvider
 {
     /**
@@ -34,17 +33,15 @@ class IranServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        $this->loadMigrationsFrom(__DIR__ . '/Database/migrations');
+        $this->loadMigrationsFrom(__DIR__.'/Database/migrations');
         $this->publishSeeds();
         $this->publishConfigs();
 
         config('iran.use_cache') ? $this->app->register(RedisServiceProvider::class) : null;
-
-
     }
 
     /**
-     * Register init command
+     * Register init command.
      */
     private function registerCommands(): void
     {
@@ -52,12 +49,11 @@ class IranServiceProvider extends ServiceProvider
     }
 
     /**
-     * Register configs
+     * Register configs.
      */
     public function registerConfigs(): void
     {
-        $this->mergeConfigFrom(__DIR__ . '/Config/iran.php', 'iran');
-
+        $this->mergeConfigFrom(__DIR__.'/Config/iran.php', 'iran');
     }
 
     /**
@@ -66,7 +62,7 @@ class IranServiceProvider extends ServiceProvider
     private function publishSeeds(): void
     {
         //php artisan vendor:publish --tag=iran-seeds
-        $this->publishes([__DIR__ . '/Database/seeders/' => base_path('database/seeds')], 'iran-seeds');
+        $this->publishes([__DIR__.'/Database/seeders/' => base_path('database/seeds')], 'iran-seeds');
     }
 
     /**
@@ -74,8 +70,7 @@ class IranServiceProvider extends ServiceProvider
      */
     private function publishConfigs(): void
     {
-            //php artisan vendor:publish --tag=iran-configs
-        $this->publishes([__DIR__ . '/Config/iran.php' => config_path('iran.php')], 'iran-configs');
-
+        //php artisan vendor:publish --tag=iran-configs
+        $this->publishes([__DIR__.'/Config/iran.php' => config_path('iran.php')], 'iran-configs');
     }
 }

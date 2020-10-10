@@ -1,6 +1,5 @@
 <?php
 
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -22,7 +21,6 @@ class CreateProvincesTable extends Migration
             $table->decimal('lat', 10, 8);
             $table->decimal('lng', 11, 8);
             $table->boolean('approved')->default(true);
-
         });
     }
 

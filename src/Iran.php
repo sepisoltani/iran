@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Sepisoltani\Iran;
 
 use Illuminate\Database\Eloquent\Collection;
@@ -24,9 +23,10 @@ class Iran
 
     /**
      * Iran constructor.
+     *
      * @param ProvinceRepositoryInterface $provinceRepository
-     * @param CityRepositoryInterface $cityRepository
-     * @param CountryRepositoryInterface $countryRepository
+     * @param CityRepositoryInterface     $cityRepository
+     * @param CountryRepositoryInterface  $countryRepository
      */
     public function __construct(ProvinceRepositoryInterface $provinceRepository, CityRepositoryInterface $cityRepository, CountryRepositoryInterface $countryRepository)
     {
@@ -38,7 +38,6 @@ class Iran
     /**
      * @return Collection
      */
-
     public function get_approved_provinces(): Collection
     {
         return $this->provinceRepository->all_approved();
@@ -47,7 +46,6 @@ class Iran
     /**
      * @return Collection
      */
-
     public function get_provinces(): Collection
     {
         return $this->provinceRepository->all();
@@ -55,19 +53,17 @@ class Iran
 
     /**
      * @param $id
+     *
      * @return Province
      */
-
     public function find_province($id): Province
     {
         return $this->provinceRepository->find($id);
     }
 
-
     /**
      * @return Collection
      */
-
     public function get_approved_countries(): Collection
     {
         return $this->countryRepository->all_approved();
@@ -76,7 +72,6 @@ class Iran
     /**
      * @return Collection
      */
-
     public function get_countries(): Collection
     {
         return $this->countryRepository->all();
@@ -84,19 +79,17 @@ class Iran
 
     /**
      * @param $id
+     *
      * @return Country
      */
-
     public function find_country($id): Country
     {
         return $this->countryRepository->find($id);
     }
 
-
     /**
      * @return Collection
      */
-
     public function get_approved_cities(): Collection
     {
         return $this->cityRepository->all_approved();
@@ -105,7 +98,6 @@ class Iran
     /**
      * @return Collection
      */
-
     public function get_cities(): Collection
     {
         return $this->cityRepository->all();
@@ -113,9 +105,9 @@ class Iran
 
     /**
      * @param $id
+     *
      * @return City
      */
-
     public function find_city($id): City
     {
         return $this->cityRepository->find($id);

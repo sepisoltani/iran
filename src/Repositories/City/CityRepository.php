@@ -1,15 +1,12 @@
 <?php
 
-
 namespace Sepisoltani\Iran\Repositories\City;
-
 
 use Illuminate\Database\Eloquent\Collection;
 use Sepisoltani\Iran\Models\City;
 
 class CityRepository implements CityRepositoryInterface
 {
-
     /**
      * @var City
      */
@@ -17,6 +14,7 @@ class CityRepository implements CityRepositoryInterface
 
     /**
      * CityRepository constructor.
+     *
      * @param City $city
      */
     public function __construct(City $city)
@@ -27,7 +25,6 @@ class CityRepository implements CityRepositoryInterface
     /**
      * @return Collection
      */
-
     public function all(): Collection
     {
         return $this->model->all();

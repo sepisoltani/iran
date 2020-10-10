@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Sepisoltani\Iran\Repositories\Province;
-
 
 use Illuminate\Database\Eloquent\Collection;
 use Sepisoltani\Iran\Models\Province;
@@ -16,6 +14,7 @@ class ProvinceRepository implements ProvinceRepositoryInterface
 
     /**
      * ProvinceRepository constructor.
+     *
      * @param Province $province
      */
     public function __construct(Province $province)
