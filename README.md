@@ -4,9 +4,8 @@
 
 [![Latest Stable Version](https://poser.pugx.org/sepisoltani/iran/v)](//packagist.org/packages/sepisoltani/iran)
 [![Total Downloads](https://poser.pugx.org/sepisoltani/iran/downloads)](//packagist.org/packages/sepisoltani/iran)
-[![Latest Unstable Version](https://poser.pugx.org/sepisoltani/iran/v/unstable)](//packagist.org/packages/sepisoltani/iran)
 [![License](https://poser.pugx.org/sepisoltani/iran/license)](//packagist.org/packages/sepisoltani/iran)
-[![Dependents](https://poser.pugx.org/sepisoltani/iran/dependents)](//packagist.org/packages/sepisoltani/iran)
+![StyleCI](https://github.styleci.io/repos/301969118/shield)
 
 This Laravel package helps developers to have Iran provinces , countries and cities in their project.
 
